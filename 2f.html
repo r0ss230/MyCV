@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name - Software Engineer</title>
+  <style>
+    /* Stylizacja całej strony */
+    body {
+      font-family: Arial, sans-serif;
+      color: #00ff00;
+      background: linear-gradient(to right, #0d0d0d, #333333);
+      overflow-y: auto;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    h1, h2, h3 {
+      color: #00ff00;
+    }
+
+    /* Główna sekcja CV */
+    .container {
+      padding: 20px;
+      width: 90%;
+      max-width: 800px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 8px;
+      box-shadow: 0px 0px 15px #00ff00;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 1.5em;
+      color: #33ff33;
+      padding: 5px 0;
+      border-bottom: 2px solid #00ff00;
+    }
+
+    /* Efekt przesuwającego się kodu binarnego */
+    .binary-stream {
+      position: fixed;
+      white-space: nowrap;
+      font-family: "Courier New", Courier, monospace;
+      color: #00ff00;
+      font-size: 16px;
+      opacity: 0.3;
+      animation: scrollBinary 15s linear infinite;
+      pointer-events: none;
+    }
+
+    /* Animacja dla ciągów binarnych */
+    @keyframes scrollBinary {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(100%); }
+    }
+
+    /* Każdy drugi strumień dla różnorodności */
+    .binary-stream:nth-child(even) {
+      animation-duration: 20s;
+      top: 20%;
+    }
+    .binary-stream:nth-child(odd) {
+      top: 80%;
+      animation-duration: 25s;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Strona główna CV -->
+<div class="container">
+  <h1>Szymon Rossa</h1>
+  <h2>Software Engineer</h2>
+  <p>Hello! I'm a passionate Software Engineer specializing in building robust applications and solving complex problems with code. I'm excited to bring innovative solutions and ideas to your team!</p>
+
+  <div class="section">
+    <div class="section-title">Contact Information</div>
+    <p>Email: <a href="mailto:szymon.rossa@lopleszew.pl">szymon.rossa@lopleszew.pl</a></p>
+    <p>Phone: +48 792 628 863</p>
+    <p>Location: Pleszew, Poland</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Skills</div>
+    <ul>
+      <li>Programming Languages: JavaScript, Python, C++, Java</li>
+      <li>Web Development: HTML, CSS, React, Node.js</li>
+      <li>Database Management: MySQL, MongoDB</li>
+      <li>Version Control: Git, GitHub</li>
+      <li>Problem-Solving and Algorithms</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Experience</div>
+    <h3>Software Engineer Intern</h3>
+    <p>Microsoft, San Francisco, United States of America</p>
+    <p>Developed and optimized internal web applications to streamline workflow, improving efficiency by 30%.</p>
+    <p>Collaborated with a team of developers using Agile methodologies and conducted code reviews to maintain high-quality code standards.</p>
+    <h3>Freelance Web Developer</h3>
+    <p>Self-Employed</p>
+    <p>Built and deployed multiple websites for small businesses, using JavaScript, HTML, CSS, and PHP. Created responsive designs that enhanced user engagement and accessibility.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Education</div>
+    <p>Bachelor's Degree in Computer Science</p>
+    <p>University of London, London, United Kingdom</p>
+    <p>Graduated: 2030</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Projects</div>
+    <h3>Remindeo</h3>
+    <p>Description: A web application designed to help users manage tasks with real-time updates and notifications.</p>
+    <p>Technologies: React, Node.js, MongoDB</p>
+
+    <h3>DataMGM</h3>
+    <p>Description: A Python-based tool for data analysis, visualizing complex data structures and providing insights.</p>
+    <p>Technologies: Python, Matplotlib, Pandas</p>
+  </div>
+
+  <a href="#top" class="btn">Back to Top</a>
+</div>
+
+<script>
+  // Generowanie efektu poziomo przesuwającego się kodu binarnego
+  const binaryContainer = document.body;
+  const binarySymbols = ['0', '1'];
+  const streamsCount = 8; // Ilość poziomych linii binarnych
+
+  for (let i = 0; i < streamsCount; i++) {
+    let stream = document.createElement('div');
+    stream.classList.add('binary-stream');
+    
+    // Generowanie ciągu binarnego
+    let binaryText = '';
+    for (let j = 0; j < 100; j++) {
+      binaryText += binarySymbols[Math.floor(Math.random() * binarySymbols.length)];
+    }
+    
+    // Ustawienia dla animacji
+    stream.innerText = binaryText;
+    stream.style.top = `${i * 10 + 10}%`; // Umiejscowienie linii na różnych wysokościach
+    stream.style.animationDelay = `${Math.random() * 5}s`; // Różne opóźnienia animacji
+    binaryContainer.appendChild(stream);
+  }
+</script>
+
+</body>
+</html>
